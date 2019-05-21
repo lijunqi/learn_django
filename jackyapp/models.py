@@ -1,5 +1,8 @@
 from django.db import models
 
+from django.utils import timezone
+import datetime
+
 '''
 1. Change your models (in models.py).
 2. Run python manage.py makemigrations to create migrations for those changes
@@ -14,6 +17,10 @@ class Question(models.Model):
 
     def __str__(self):
         return self.question_text
+
+    def was_published_recently(self):
+        now = timezone.now()
+        return now - datetime.timedelta(days=1) <= self.pub_date <= now
 
 
 class Choice(models.Model):
