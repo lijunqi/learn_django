@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+
+    #? it collects static files(images, js or css) from each of your applications
+    #? (and any other places you specify) into a single location that can easily be served in production.
     'django.contrib.staticfiles',
 ]
 
